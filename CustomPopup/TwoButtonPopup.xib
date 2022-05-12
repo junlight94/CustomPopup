@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwoButtonPopup" customModule="CustomPopup" customModuleProvider="target">
             <connections>
+                <outlet property="popupView" destination="pPw-u8-44o" id="Hkn-g4-cjM"/>
+                <outlet property="presentLabel" destination="rw5-6S-XrC" id="sD6-9e-y2i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,69 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KQ-ql-U9l" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-u8-44o" userLabel="PopupView">
+                    <rect key="frame" x="20" y="393" width="374" height="110.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw5-6S-XrC">
+                            <rect key="frame" x="20" y="20" width="334" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJ0-iw-8kI">
+                            <rect key="frame" x="0.0" y="60.5" width="374" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-Oh-sGw">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                    <connections>
+                                        <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="n4Z-nN-4Lo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlP-dM-j6i">
+                                    <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                    <connections>
+                                        <action selector="confirmButtonAction:" destination="-1" eventType="touchUpInside" id="Tuf-bZ-NiZ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Qzf-Oh-Uet"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dJ0-iw-8kI" secondAttribute="bottom" id="BA6-4R-gl7"/>
+                        <constraint firstItem="rw5-6S-XrC" firstAttribute="leading" secondItem="pPw-u8-44o" secondAttribute="leading" constant="20" id="Dim-sx-UrD"/>
+                        <constraint firstItem="rw5-6S-XrC" firstAttribute="top" secondItem="pPw-u8-44o" secondAttribute="top" constant="20" id="Dz1-ku-yLr"/>
+                        <constraint firstItem="dJ0-iw-8kI" firstAttribute="leading" secondItem="pPw-u8-44o" secondAttribute="leading" id="T9G-Gm-Wcp"/>
+                        <constraint firstAttribute="trailing" secondItem="rw5-6S-XrC" secondAttribute="trailing" constant="20" id="e4Y-OS-6Jb"/>
+                        <constraint firstItem="dJ0-iw-8kI" firstAttribute="top" secondItem="rw5-6S-XrC" secondAttribute="bottom" constant="20" id="t8L-JG-5HG"/>
+                        <constraint firstAttribute="trailing" secondItem="dJ0-iw-8kI" secondAttribute="trailing" id="v2J-Lk-FUU"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="126"/>
+            <constraints>
+                <constraint firstItem="pPw-u8-44o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7vi-SM-wJ8"/>
+                <constraint firstItem="6KQ-ql-U9l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Nkg-IK-xgP"/>
+                <constraint firstAttribute="bottom" secondItem="6KQ-ql-U9l" secondAttribute="bottom" id="So1-6c-l8K"/>
+                <constraint firstItem="6KQ-ql-U9l" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YMw-Da-9aJ"/>
+                <constraint firstItem="pPw-u8-44o" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jXG-zJ-w1Q"/>
+                <constraint firstItem="6KQ-ql-U9l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o2N-A7-QQ5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pPw-u8-44o" secondAttribute="trailing" constant="20" id="oFo-bn-NdF"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </view>
     </objects>
     <resources>
