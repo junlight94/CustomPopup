@@ -9,4 +9,4 @@
 
 ### 코드
 * [Main](https://github.com/junlight94/CustomPopup/blob/main/CustomPopup/ViewController.swift)
-* [Popup] 
+* [Popup](https://github.com/junlight94/CustomPopup/blob/main/CustomPopup/TwoButtonPopup.swift)
