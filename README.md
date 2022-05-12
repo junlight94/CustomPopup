@@ -8,5 +8,5 @@
 6. 취소 (Dismiss 팝업창 닫기)
 
 ### 코드
-* [Main](https://github.com/junlight94/TableViewPhoneBook/blob/main/TableViewPhoneBook/ViewController.swift)
+* [Main](omPopup/blob/main/CustomPopup/ViewController.swift)
 * [Popup] 
